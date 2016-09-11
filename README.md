@@ -4,8 +4,7 @@ Implementación en `node.js` del API de backend para el servicio de datos abiert
 
 ## Requisitos
 
-* `node.js` versión `v0.12.9` : https://nodesource.com/blog/chris-lea-joins-forces-with-nodesource/
-* `orientdb` versión `2.1.7` o mayor
+* `node` versión `v6.2.1` (https://github.com/creationix/nvm)
 * `docker` versión `1.9.1`
 * `docker-compose` versión `1.6.2`
 
