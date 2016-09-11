@@ -1,0 +1,10 @@
+orientdb:
+  image: orientdb/orientdb
+  ports:
+    - "0.0.0.0:2434:2434"
+    - "0.0.0.0:2480:2480"
+    - "0.0.0.0:2424:2424"
+  volumes:
+    - "/mnt/sda1/dockerVolumes/orientdb:/opt/orientdb/databases"
+  environment:
+    - ORIENTDB_ROOT_PASSWORD

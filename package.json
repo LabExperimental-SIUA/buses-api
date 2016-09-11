@@ -1,0 +1,23 @@
+{
+  "name": "engine-js",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bunyan": "^1.5.1",
+    "cookie-parser": "~1.3.5",
+    "deasync": "^0.1.4",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "express-validator": "2.20.2",
+    "lodash": "^4.0.0",
+    "moment": "^2.11.1",
+    "morgan": "~1.6.1",
+    "node-uuid": "^1.4.7",
+    "orientjs": "^2.1.0",
+    "promise": "^7.1.1"
+  }
+}
