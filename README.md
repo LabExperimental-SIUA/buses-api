@@ -21,6 +21,7 @@ npm install
 * Levantar el servicio de base de datos
 
 ```
+export ORIENTDB_ROOT_PASSWORD="root"
 docker-compose up
 ```
 

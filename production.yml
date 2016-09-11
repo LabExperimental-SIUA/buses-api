@@ -1,0 +1,22 @@
+web:
+    image: buses-api
+    ports:
+        - "0.0.0.0:80:80"
+    environment:
+        BUSES_ODB_HOST: odb
+        PORT: 80
+    links:
+        - odb
+    working_dir: /root/buses-api
+    command: "./server.sh"
+
+odb:
+    image: orientdb/orientdb
+    ports:
+        - "0.0.0.0:2434:2434"
+        - "0.0.0.0:2480:2480"
+        - "0.0.0.0:2424:2424"
+    environment:
+        ORIENTDB_ROOT_PASSWORD: root
+    volumes:
+        - "/mnt/sda1/dockerVolumes/orientdb:/opt/orientdb/databases"
