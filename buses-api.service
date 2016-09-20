@@ -1,0 +1,17 @@
+[Unit]
+Description=buses-api service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=-/usr/bin/docker rm buses-api
+ExecStartPre=/bin/bash -c \
+  "/usr/bin/docker pull labexp/buses-api:latest"
+ExecStart=/bin/bash -c \
+  "cd /opt/buses-api && docker-compose up -d"
+ExecStop=/usr/local/bin/docker-compose stop
+
+[Install]
+WantedBy=default.target
+

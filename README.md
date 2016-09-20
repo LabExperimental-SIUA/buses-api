@@ -37,6 +37,33 @@ bin/www
 node_modules/orientjs/bin/orientjs migrate up
 ```
 
+## Instalación en producción
+
+* Instalar `docker`
+
+* Crear estructura de directorios para el servicio
+
+```bash
+sudo mkdir -p /opt/buses-api/orientdb/databases
+```
+
+* Crear el archivo `/opt/buses-api/.env` con las siguientes variables de ambiente:
+
+```bash
+ORIENTDB_ROOT_PASSWORD=...
+PORT=80
+BUSES_ODB_HOST=odb
+```
+
+* Copiar el contenido de `production.yml` en este repositorio a `/opt/buses-api/docker-compose.yml`
+
+* Copiar el contenido de `buses-api.service` en `/etc/systemd/system/buses-api.service`
+
+```bash
+systemctl enable buses-api.service
+systemctl restart buses-api.service
+```
+
 ## Recursos
 
 ### `POST http://localhost:3000/buses/v0.1/route`

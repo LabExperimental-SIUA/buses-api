@@ -1,5 +1,5 @@
 web:
-    image: buses-api
+    image: labexp/buses-api
     ports:
         - "0.0.0.0:80:80"
     environment:
@@ -11,7 +11,7 @@ web:
     command: "./server.sh"
 
 odb:
-    image: orientdb/orientdb
+    image: orientdb:2.1.23
     ports:
         - "0.0.0.0:2434:2434"
         - "0.0.0.0:2480:2480"
@@ -19,4 +19,4 @@ odb:
     environment:
         ORIENTDB_ROOT_PASSWORD: root
     volumes:
-        - "/mnt/sda1/dockerVolumes/orientdb:/opt/orientdb/databases"
+        - "/opt/buses-api/orientdb/databases:/opt/orientdb/databases"
